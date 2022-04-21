@@ -41,6 +41,8 @@
  * @param {number} target
  * @return {number[]}
  */
+
+//SOLUTION 1:
 var twoSum = function(nums, target) {
 //empty object
     const previousValues = {}
@@ -60,4 +62,33 @@ var twoSum = function(nums, target) {
             previousValues[currentNumber] = i
         }
     }
+};
+
+//SOLUTION 2:
+
+//JavaScript Object Solution
+
+//Function is simple a "chunk" of code
+//twoSum = Function Name
+//(nums, target) = our Parameters that are seperated by commas
+function twoSum(nums, target) {
+
+    //Here we are creating a "Map" object that holds key-value pairs
+    //This is creating a "Map" called compliment (Maps introduced in ES6)
+    const comp = new Map();
+    //This will grab the Array VIA Length
+    const len = nums.length;
+    //ForLoop: control flow statment for specifying iteration, allows code to be executed and repeated
+    for(let i = 0; i<len ; i++){
+        //This means if comp equals greater or less than 0
+        if(comp[nums[i]] >=0){
+            //Then return the index of the number itself and the comp
+            //I believe this is two indexs below
+            return [comp[nums[i]], i]
+        }
+        comp[target - nums[i]] = i;
+    }
+
+    return []
+
 };
