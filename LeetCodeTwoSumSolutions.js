@@ -173,3 +173,31 @@ function twoSum (arr, target) {
 }
 // const num1 = [2, 7, 11, 15] //This is an array
 // console.log(twoSum(nums1, 9)) //[0,1]
+
+//SOLUTION 5
+// Two-Pass Hash Solution
+
+function twoSum (nums, target){
+    //hashMap - improves time complexity
+    //hashMap - object in JS where we store key value pairs
+    //{} = Empty Object Below
+    const hashMap = {}
+    //For Loop
+    for (let i = 0; i < nums.length; i++){
+        //Key Value Pairs Below
+        //[nums[i]] = integers in array below
+        //Below we are storing each one of those as keys in hashMap
+        //Setting those values to the key of i which means index
+        hashMap[nums[i]] = i;
+    }
+    //Second for loop since this is a "two-pass"
+    for (let i = 0; i < nums.length; i++){
+        let complement = target - nums[i]
+        //below is saying if complement is in the hashMap and hashMap Complement doesnt = i
+        //then it will return answer
+        if(hashMap[complement] && hashMap[complement] !== i) {
+            return[i, hashMap[complement]]
+        }
+    }
+}
+const num1 = [2, 7, 11, 15] //This is an array
