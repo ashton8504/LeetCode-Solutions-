@@ -20,7 +20,7 @@
 //Return:
     //Array of indices
     //Adding to target
-//WhiteBoardSolution:
+//WhiteBoardSolution with BruteForce:
     //forEach num, index in nums
     //forEach num2, index2 in nums
     //if num + num2 = target
@@ -28,7 +28,14 @@
     //end
     //end
     //end
-
+//WhiteBoard Solution VIA code below:
+    //forEach num, index in nums
+    //neededValue = Target - num
+    //index2 = prevValues[neededValues]
+    //if index2 != null
+    //return [index2, i]
+    //else
+    //prevValues[num] = index
 /**
  * @param {number[]} nums
  * @param {number} target
