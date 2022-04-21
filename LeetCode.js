@@ -13,7 +13,22 @@
     //Given an array of numbers, we have a target and we need to sort the data so it returns two numbers that add up to the target.
     //We are not allowed to use the same element twice (same numbers for the solution to this problem)
     // Doesn't matter how we return the number, it can be in any order! 
-   
+
+//Given:
+    //num:[int]
+    //target: int
+//Return:
+    //Array of indices
+    //Adding to target
+//WhiteBoardSolution:
+    //forEach num, index in nums
+    //forEach num2, index2 in nums
+    //if num + num2 = target
+    //return [index, index2]
+    //end
+    //end
+    //end
+
 /**
  * @param {number[]} nums
  * @param {number} target
