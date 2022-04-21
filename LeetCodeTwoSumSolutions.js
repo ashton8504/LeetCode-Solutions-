@@ -150,3 +150,26 @@ const twoSum = (array, target) => {
     };
     return null;
 };
+
+//SOLUTION 4 Another Style of Brute Force
+
+//Brute Force - Approach that is not optimized
+// Did another Brute Force  for different syntax etc
+//(source The Code Creative - How to solve LeetCode Two Sum)
+function twoSum (arr, target) {
+    //For Loop Below
+    for (let i = 0; i < arr.length; i++) {
+        //Nested Loop (loop inside of a loop)
+        for (let j = i + 1; j < arr.length; j++) {
+            //Code below is telling us if code above is hitting the target
+            // arr[i] = first loop we set up
+            //arr[j] = Second Loop
+            if (arr[i] + arr[j] === target) {
+                //this returns if we hit the target
+                return [i, j]
+            }
+        }
+    }
+}
+// const num1 = [2, 7, 11, 15] //This is an array
+// console.log(twoSum(nums1, 9)) //[0,1]
