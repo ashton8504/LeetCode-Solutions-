@@ -92,3 +92,61 @@ function twoSum(nums, target) {
     return []
 
 };
+
+//SOLUTION 3:
+
+//Brute Force Method which is a Naive Approach
+
+//Const in programming is a keyword that defines variable or pointer as unchangeable
+
+//twoSum will be our variable
+
+//variable = are used to store info to be referenced or maniuplated in a computer program
+
+//Parameters will be array & target
+
+//Parameters = is a formal argument, these pieces of data are values of our arguments (array&target)
+
+//Below Code is using an arrow function (=>)
+
+//An arrow function expression is a compact alternative to a tradiontal function expression
+
+//Function Expression = a keyword that can be used to define a function inside an expression
+
+//Below code uses {} & []
+
+//{} = object value pair (below we have 2?)
+
+//[] = array-values
+
+//JavaScript for loop executes a block of code as long as a specified condition is true
+
+//Below we are using a for loop inside a for loop
+
+//for (initialization; condition; increment) {
+// Execute code
+//}
+
+//initialization = let i = 0; (used to declare a counter variable)
+//condition = i < array.length (the condition that is evaluated before each loops stars)
+//increment = i++ (updates the loop counter each time the loop is executed)
+
+const twoSum = (array, target) => {
+    //initialization declares our variable (let i = 0),
+    //tells our program to start a counter called i that has an intial value of 0
+    //condition our loop is using i < array.length;
+    //this tells our program that our loop should run when i (0) is less than our arrays length
+    //increment (i++) this is telling our loop to
+    //add 1 to the variable i each time the loop is executed
+    for ( let i = 0; i < array.length; i++) {
+        //Below is a nested loop within a loop which is a inner loop within the body of an outer loop
+        //intialization, condtion and increment will be different than previous loop
+        // as we are targeting another number per exercise: "return indices of the two numbers ""
+        for ( let j= i++; i< array.length; j++) {
+            //this is saying if our second array (loop) is === to target minus (-)
+            // our first array(loop) then we return two values i & j else we return null
+            if ( array[j] === target - array[i]) return [i, j]
+        };
+    };
+    return null;
+};
