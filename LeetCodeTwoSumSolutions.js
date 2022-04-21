@@ -201,3 +201,23 @@ function twoSum (nums, target){
     }
 }
 const num1 = [2, 7, 11, 15] //This is an array
+
+//SOLUTION 6
+// One-Pass Hash Solution
+
+function twoSum (nums, target){
+    //hashMap - improves time complexity
+    //hashMap - object in JS where we store key value pairs
+    //{} = Empty Object Below
+    const hashMap = {}
+    //one for loop since this is a "one-pass"
+    for (let i = 0; i < nums.length; i++){
+        let complement = target - nums[i]
+        //below is saying if complement is in the hashMap, then we will return it
+        if(complement in hashMap) {
+            return[i, hashMap[complement]]
+        }
+        hashMap[nums[i]] = i;
+    }
+}
+const num1 = [2, 7, 11, 15] //This is an array
