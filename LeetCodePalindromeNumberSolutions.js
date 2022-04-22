@@ -99,3 +99,24 @@ var isPalindrome = function(x) {
     }
     return true;
 };
+
+//Solution 4:
+
+//Solve without String Conversion
+
+function isPalindrome(x) {
+    if(x < 0) return false;
+    //creates a variable called reverse & sets it to 0
+    let reverse = 0;
+
+    //for loop
+    //i is equal to x
+    //i is greater or = to 1
+    //Math.floor is our increment  we are dividing i by 10
+    //its extracting the things ahead of decimal
+    for(let i=x; i>=1; i = Math.floor(i/10)) reverse = reverse*10 + i%10;
+    //Return Statement
+    //Reverse is equal to x
+    return reverse === x;
+
+};
