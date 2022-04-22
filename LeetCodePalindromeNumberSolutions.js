@@ -21,7 +21,7 @@
 
 //Concatenating a method that "merges" the contents of two or more strings
 
-    //Solution 1 
+    //Solution 1
 var isPalindrome = function(x) {
     //How you get a string and reverse the string
     //let reversed is beging set to input x and converting to string
@@ -34,3 +34,29 @@ var isPalindrome = function(x) {
     return (x.toString() === reversed)
 };
 console.log(isPalindrome)
+
+//SOLUTION 2
+
+
+//Palindrome: Reads backwards as forward
+
+//toString() a method returns a string representing the object
+
+//function in JS is a set of statements that perform a task or calculates a value
+
+//Concatenating a method that "merges" the contents of two or more strings
+
+var isPalindrome = function(x) {
+    //Declaring empty string
+    let reversedStr = ''
+    //Below we are setting "x" to a string (string version of 121)
+    let xStr = x.toString()
+    //For Loop
+    for (let i of xStr){
+        reversedStr = i + reversedStr
+        // console.log(reversedStr)
+    }
+    //Comparing reversed string to the stringify version of X
+    //Will give us true or false
+    return(reversedStr === xStr)
+};
