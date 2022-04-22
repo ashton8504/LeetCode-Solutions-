@@ -60,3 +60,42 @@ var isPalindrome = function(x) {
     //Will give us true or false
     return(reversedStr === xStr)
 };
+
+//SOLUTION 3:
+
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    //if x is less than zero its not Palindrome
+    if (x < 0){
+        return false;
+    }
+    //if x is less than 10 its a palindrome
+    if (x<10){
+        return true;
+    }
+    if(x % 10 === 0){
+        return false;
+    }
+    //This line converts number into strings
+    const str = String(x);
+    //i will now = 0
+    let i = 0;
+    //j = string length -1
+    let j = str.length-1;
+    //this is a while loop
+    while(i<j){
+        //if string[i] is not = to str[j] then return false
+        if(str[i] !== str[j]){
+            return false;
+        }
+        //this assigns and then increments
+        //The increment operator and will add 1
+        i++;
+        //This is a decrement and it will substract 1
+        j--;
+    }
+    return true;
+};
