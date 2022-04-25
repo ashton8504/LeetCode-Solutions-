@@ -45,3 +45,52 @@ var mergeTwoLists = function(l1, l2) {
     }
     return dummy.next
 };
+
+//SOLUTION 2
+
+// /*
+// merging two list is simple
+// keep merging two at a time till there is only one list left (lists.length ===1)
+
+// */
+
+function mergeList(a, b){
+    let dummy = new ListNode(0);
+    let current = dummy;
+
+    while(a !== null && b !== null){
+        if(a.val < b.val){
+            current.next = a;
+            a = a.next;
+        }else{
+            current.next = b;
+            b = b.next;
+        }
+
+        current = current.next;
+    }
+
+    current.next = a || b;
+
+    return dummy.next;
+}
+
+const mergeKLists = function(lists) {
+    //This is an edge case
+    //edge case is a boundary condition in programming
+    if(lists.length === 0){
+        return null;
+    }
+
+    //while list.length is greater than one keep merging
+    while(lists.length > 1){
+        //.shift() removes from element in array
+        let a = lists.shift();
+        let b = lists.shift();
+        //this is merging two lists from above
+        let mergedAB = mergeList(a,b);
+        //taking merged list and pushing back into array
+        lists.push(mergedAB);
+    }
+    return lists[0];
+};
