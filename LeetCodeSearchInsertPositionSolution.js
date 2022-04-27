@@ -28,3 +28,24 @@ var searchInsert = function(nums, target) {
     //calling our code with return function
     return left
 };
+
+//SOLUTION 2
+
+var searchInsert = function(nums, target) {
+    //setting up values res =0
+    let res = 0;
+    //forEach loop with  paramters of n & i
+    //forEach() executes a provided function once for each array element
+    nums.forEach((n, i) => {
+        //if n stricltly equals target then result is equal to i
+        if(n === target) res = i;
+        //else if so if above code does run  we do this
+        else if(
+            //if target is greater than n and target less than nums[i + 1]
+            //or (||) nums[i+1] is undefined result is i+1
+            target > n && (target < nums[i + 1] || nums[i + 1] === undefined))
+            res = i + 1;
+    });
+    //callback function to return result
+    return res;
+};
